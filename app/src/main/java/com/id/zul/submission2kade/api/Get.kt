@@ -5,7 +5,7 @@ import com.id.zul.submission2kade.BuildConfig
 
 object Get {
 
-    fun getDetailInLeague(league: String?): String {
+    fun getTeams(league: String?): String {
         return Uri.parse(BuildConfig.BASE_URL)
             .buildUpon()
             .appendPath("api")
@@ -14,6 +14,42 @@ object Get {
             .appendPath(BuildConfig.API_KEY)
             .appendPath("search_all_teams.php")
             .appendQueryParameter("l", league)
+            .build()
+            .toString()
+    }
+
+    fun getTeamDetail(id: String?): String {
+        return Uri.parse(BuildConfig.BASE_URL).buildUpon()
+            .appendPath("api")
+            .appendPath("v1")
+            .appendPath("json")
+            .appendPath(BuildConfig.API_KEY)
+            .appendPath("lookupteam.php")
+            .appendQueryParameter("id", id)
+            .build()
+            .toString()
+    }
+
+    fun getPreviousNext(id: String?): String {
+        return Uri.parse(BuildConfig.BASE_URL).buildUpon()
+            .appendPath("api")
+            .appendPath("v1")
+            .appendPath("json")
+            .appendPath(BuildConfig.API_KEY)
+            .appendPath("eventspastleague.php")
+            .appendQueryParameter("id", id)
+            .build()
+            .toString()
+    }
+
+    fun getNextMatch(id: String?): String {
+        return Uri.parse(BuildConfig.BASE_URL).buildUpon()
+            .appendPath("api")
+            .appendPath("v1")
+            .appendPath("json")
+            .appendPath(BuildConfig.API_KEY)
+            .appendPath("eventsnextleague.php")
+            .appendQueryParameter("id", id)
             .build()
             .toString()
     }

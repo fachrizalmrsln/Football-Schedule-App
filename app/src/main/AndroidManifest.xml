@@ -13,11 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activity.DetailMatchActivity">
+        </activity>
         <activity android:name=".activity.SearchActivity">
         </activity>
         <activity
-            android:name=".activity.DetailLeagueActivity"
-            android:parentActivityName=".activity.DetailLeagueActivity">
+            android:name=".activity.DetailTeamActivity"
+            android:parentActivityName=".activity.DetailTeamActivity">
         </activity>
         <activity android:name=".activity.MainActivity">
             <intent-filter>

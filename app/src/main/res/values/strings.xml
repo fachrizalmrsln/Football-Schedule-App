@@ -1,12 +1,23 @@
 <resources>
     <string name="app_name">Submission2KADE</string>
-    <string name="league_name_template">League Name</string>
+    <string name="team_name_template">Team Name</string>
     <string name="matches">Matches</string>
     <string name="teams">Teams</string>
     <string name="description_detail">Description</string>
     <string name="title_detail">Title</string>
     <string name="title">Toolbar Title</string>
     <string name="search_menu_text">Search</string>
+    <string name="year_template">1997</string>
+    <string name="team_aka_template">Team Aka</string>
+    <string name="team_template">Team</string>
+    <string name="nation">Nation</string>
+    <string name="stadium_location_template">Tokyo, Japan</string>
+    <string name="vs">vs</string>
+    <string name="date">Date</string>
+    <string name="score">-</string>
+    <string name="detail_match">Detail Match</string>
+    <string name="goals">Goals</string>
+    <string name="shoot">Shoot</string>
 
     <array name="league">
         <item>English Premier League</item>

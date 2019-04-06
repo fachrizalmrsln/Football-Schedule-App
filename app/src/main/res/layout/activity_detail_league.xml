@@ -4,44 +4,196 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.DetailLeagueActivity"
+    tools:context=".activity.DetailTeamActivity"
     android:orientation="vertical">
 
     <include
         layout="@layout/toolbar"/>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/size250"
-        android:layout_margin="@dimen/margin4"
-        android:padding="@dimen/padding8"
-        android:src="@drawable/ic_launcher_background"/>
+    <ProgressBar
+        android:id="@+id/progress_detail"
+        android:layout_width="@dimen/size60"
+        android:layout_height="@dimen/size60"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/size300"/>
 
     <ScrollView
+        android:id="@+id/scroll_detail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/title_detail"
-                android:textSize="@dimen/textSize30"
-                android:textColor="@android:color/black"
-                android:layout_margin="@dimen/margin8"/>
+                android:layout_height="wrap_content">
 
-            <TextView
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size300">
+
+                    <ImageView
+                        android:id="@+id/image_stadium_template"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_launcher_background"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="@dimen/margin16">
+
+                        <TextView
+                            android:id="@+id/text_team_stadium_name_template"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/stadium_location_template"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/textSize18"
+                            android:textStyle="bold"
+                            tools:ignore="RtlHardcoded"/>
+
+                        <TextView
+                            android:id="@+id/text_team_stadium_location_template"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/stadium_location_template"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/image_logo_template"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_launcher_background"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/padding8"
+                        android:layout_marginBottom="@dimen/margin16"/>
+
+                </FrameLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/description_detail"
-                android:textSize="18sp"
-                android:layout_marginLeft="@dimen/margin16"
-                android:layout_marginRight="@dimen/margin16"
-                android:layout_marginBottom="@dimen/margin20"/>
+                android:layout_margin="@dimen/margin8">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_team_name_template"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title_detail"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/textSize30"
+                        android:gravity="center_horizontal"
+                        android:textColor="@android:color/black"
+                        android:layout_marginTop="@dimen/margin8"/>
+
+                    <TextView
+                        android:id="@+id/text_team_aka_template"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/team_aka_template"
+                        android:textSize="@dimen/textSize18"
+                        android:gravity="center_horizontal"
+                        android:layout_marginLeft="@dimen/margin16"
+                        android:layout_marginRight="@dimen/margin16"/>
+
+                    <TextView
+                        android:id="@+id/text_team_year_template"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/year_template"
+                        android:textSize="@dimen/textSize18"
+                        android:gravity="center_horizontal"
+                        android:textColor="@android:color/black"
+                        android:textStyle="italic"
+                        android:layout_marginLeft="@dimen/margin16"
+                        android:layout_marginRight="@dimen/margin16"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="@dimen/margin20">
+
+                        <TextView
+                            android:id="@+id/text_team_league_template"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/team_template"
+                            android:textSize="@dimen/textSize18"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:layout_marginLeft="@dimen/margin16"
+                            android:layout_marginRight="@dimen/margin16"/>
+
+                        <TextView
+                            android:id="@+id/text_team_nation_template"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nation"
+                            android:textSize="@dimen/textSize18"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:layout_marginLeft="@dimen/margin16"
+                            android:layout_marginRight="@dimen/margin16"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin8">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/description_detail"
+                        android:textSize="@dimen/textSize30"
+                        android:gravity="center_horizontal"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_marginTop="@dimen/margin8"
+                        android:layout_marginBottom="@dimen/padding8"/>
+
+                    <TextView
+                        android:id="@+id/text_team_description_template"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/team_aka_template"
+                        android:textSize="@dimen/textSize18"
+                        android:layout_marginLeft="@dimen/margin16"
+                        android:layout_marginRight="@dimen/margin16"
+                        android:layout_marginBottom="@dimen/margin20"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
 
         </LinearLayout>
 

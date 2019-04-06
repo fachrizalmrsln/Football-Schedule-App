@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import com.id.zul.submission2kade.R
-import com.id.zul.submission2kade.fragment.league.FragmentLeagueContainer
 import com.id.zul.submission2kade.fragment.match.FragmentMatchContainer
+import com.id.zul.submission2kade.fragment.team.FragmentTeamsContainer
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
             .beginTransaction()
             .replace(
                 R.id.container_main_view,
-                FragmentLeagueContainer(), FragmentLeagueContainer::class.java.simpleName
+                FragmentTeamsContainer(), FragmentTeamsContainer::class.java.simpleName
             )
             .commit()
     }

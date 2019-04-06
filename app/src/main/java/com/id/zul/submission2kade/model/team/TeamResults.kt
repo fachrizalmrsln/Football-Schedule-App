@@ -1,8 +1,8 @@
-package com.id.zul.submission2kade.model.league
+package com.id.zul.submission2kade.model.team
 
 import com.google.gson.annotations.SerializedName
 
-data class LeagueResults(
+data class TeamResults(
     @SerializedName("idTeam")
     var idTeam: String? = null,
     @SerializedName("idSoccerXML")
@@ -14,13 +14,13 @@ data class LeagueResults(
     @SerializedName("strTeamShort")
     var strTeamShort: String? = null,
     @SerializedName("strAlternate")
-    var strAlternate: String? = null,
+    var akaTeam: String? = null,
     @SerializedName("intFormedYear")
-    var intFormedYear: String? = null,
+    var yearTeam: String? = null,
     @SerializedName("strSport")
     var strSport: String? = null,
     @SerializedName("strLeague")
-    var strLeague: String? = null,
+    var leagueTeam: String? = null,
     @SerializedName("idLeague")
     var idLeague: String? = null,
     @SerializedName("strDivision")
@@ -28,17 +28,17 @@ data class LeagueResults(
     @SerializedName("strManager")
     var strManager: String? = null,
     @SerializedName("strStadium")
-    var strStadium: String? = null,
+    var nameStadium: String? = null,
     @SerializedName("strKeywords")
     var strKeywords: String? = null,
     @SerializedName("strRSS")
     var strRSS: String? = null,
     @SerializedName("strStadiumThumb")
-    var strStadiumThumb: String? = null,
+    var stadiumBackDrop: String? = null,
     @SerializedName("strStadiumDescription")
     var strStadiumDescription: String? = null,
     @SerializedName("strStadiumLocation")
-    var strStadiumLocation: String? = null,
+    var locationStadium: String? = null,
     @SerializedName("intStadiumCapacity")
     var intStadiumCapacity: String? = null,
     @SerializedName("strWebsite")
@@ -50,7 +50,7 @@ data class LeagueResults(
     @SerializedName("strInstagram")
     var strInstagram: String? = null,
     @SerializedName("strDescriptionEN")
-    var strDescriptionEN: String? = null,
+    var descriptionTeam: String? = null,
     @SerializedName("strDescriptionDE")
     var strDescriptionDE: String? = null,
     @SerializedName("strDescriptionFR")
@@ -82,9 +82,9 @@ data class LeagueResults(
     @SerializedName("strGender")
     var strGender: String? = null,
     @SerializedName("strCountry")
-    var strCountry: String? = null,
+    var countryTeam: String? = null,
     @SerializedName("strTeamBadge")
-    var teamIcon: String? = null,
+    var logoTeam: String? = null,
     @SerializedName("strTeamJersey")
     var strTeamJersey: String? = null,
     @SerializedName("strTeamLogo")

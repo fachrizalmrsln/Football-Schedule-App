@@ -1,4 +1,4 @@
-package com.id.zul.submission2kade.fragment.league
+package com.id.zul.submission2kade.fragment.team
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -13,18 +13,18 @@ import android.widget.ProgressBar
 import android.widget.Spinner
 import com.google.gson.Gson
 import com.id.zul.submission2kade.R
-import com.id.zul.submission2kade.adapter.league.LeagueAdapter
+import com.id.zul.submission2kade.adapter.team.TeamsAdapter
 import com.id.zul.submission2kade.api.Request
-import com.id.zul.submission2kade.model.league.LeagueResults
-import com.id.zul.submission2kade.presenter.league.LeaguePresenter
-import com.id.zul.submission2kade.view.league.LeagueView
+import com.id.zul.submission2kade.model.team.TeamResults
+import com.id.zul.submission2kade.presenter.team.TeamsPresenter
+import com.id.zul.submission2kade.view.team.TeamsView
 
-class FragmentLeagueContainer : Fragment(), LeagueView {
+class FragmentTeamsContainer : Fragment(), TeamsView {
 
-    private var items: MutableList<LeagueResults> = mutableListOf()
+    private var items: MutableList<TeamResults> = mutableListOf()
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: LeagueAdapter
-    private lateinit var leaguePresenter: LeaguePresenter
+    private lateinit var adapter: TeamsAdapter
+    private lateinit var teamsPresenter: TeamsPresenter
     private lateinit var spinner: Spinner
     private lateinit var spinnerItems: Array<String>
     private lateinit var spinnerAdapter: ArrayAdapter<String>
@@ -32,7 +32,7 @@ class FragmentLeagueContainer : Fragment(), LeagueView {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater
-            .inflate(R.layout.fragment_league_container, container, false)
+            .inflate(R.layout.fragment_team_container, container, false)
 
         signInViews(view)
         initializePresenter()
@@ -58,12 +58,12 @@ class FragmentLeagueContainer : Fragment(), LeagueView {
     private fun initializePresenter() {
         val request = Request()
         val gson = Gson()
-        leaguePresenter = LeaguePresenter(this, request, gson)
+        teamsPresenter = TeamsPresenter(this, request, gson)
     }
 
     private fun setRecycler() {
         recyclerView.layoutManager = GridLayoutManager(activity, 2)
-        adapter = LeagueAdapter(this.context!!, items)
+        adapter = TeamsAdapter(this.context!!, items)
         recyclerView.adapter = adapter
     }
 
@@ -72,7 +72,7 @@ class FragmentLeagueContainer : Fragment(), LeagueView {
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 val query = spinner.selectedItem.toString()
-                leaguePresenter.getLeagueList(query)
+                teamsPresenter.getLeagueList(query)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {}
@@ -85,9 +85,9 @@ class FragmentLeagueContainer : Fragment(), LeagueView {
         recyclerView.visibility = View.GONE
     }
 
-    override fun setInItData(dataLeague: List<LeagueResults>) {
+    override fun setInItData(dataTeam: List<TeamResults>) {
         items.clear()
-        items.addAll(dataLeague)
+        items.addAll(dataTeam)
         adapter.notifyDataSetChanged()
     }
 
