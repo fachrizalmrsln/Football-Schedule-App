@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.DetailLigaActivity"
+    tools:context=".activity.DetailLeagueActivity"
     android:orientation="vertical">
 
     <include
         layout="@layout/toolbar"/>
 
     <ImageView
-        android:id="@+id/image_detail"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size250"
         android:layout_margin="@dimen/margin4"
@@ -28,7 +27,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/text_title_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/title_detail"
@@ -37,7 +35,6 @@
                 android:layout_margin="@dimen/margin8"/>
 
             <TextView
-                android:id="@+id/text_description_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/description_detail"

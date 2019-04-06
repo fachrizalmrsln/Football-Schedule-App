@@ -12,10 +12,10 @@ import org.junit.runner.RunWith
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(AndroidJUnit4::class)
-class ExampleInstrumentedTest {
+class LeagueDetailLocalResultInstrumentedTest {
     @Test
     fun useAppContext() {
-        // Context of the app under test.
+        // CoroutinesContext of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
         assertEquals("com.id.zul.submission2kade", appContext.packageName)
     }
