@@ -36,7 +36,8 @@ class FragmentNextMatch : Fragment(), NextMatchView {
         return FragmentNextMatch()
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?):
+            View? {
         val view = inflater
             .inflate(R.layout.fragment_next_match, container, false)
 
@@ -49,9 +50,9 @@ class FragmentNextMatch : Fragment(), NextMatchView {
     }
 
     private fun signInViews(view: View) {
-        progressBar = view.findViewById(R.id.progress_match)
-        recyclerView = view.findViewById(R.id.recycler_match)
-        spinner = view.findViewById(R.id.spinner_match)
+        progressBar = view.findViewById(R.id.progress_next_match)
+        recyclerView = view.findViewById(R.id.recycler_next_match)
+        spinner = view.findViewById(R.id.spinner_next_match)
 
         //spinner component
         spinnerItems = resources.getStringArray(R.array.league)
@@ -110,6 +111,5 @@ class FragmentNextMatch : Fragment(), NextMatchView {
         progressBar.visibility = View.GONE
         recyclerView.visibility = View.VISIBLE
     }
-
 
 }

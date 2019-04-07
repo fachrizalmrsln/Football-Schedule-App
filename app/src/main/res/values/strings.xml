@@ -15,9 +15,13 @@
     <string name="vs">vs</string>
     <string name="date">Date</string>
     <string name="score">-</string>
-    <string name="detail_match">Detail Match</string>
+    <string name="match_results">Match Results</string>
     <string name="goals">Goals</string>
     <string name="shoot">Shoot</string>
+    <string name="time_dummy">14:00</string>
+    <string name="goal_soccer">Goal Soccer</string>
+    <string name="league">League</string>
+    <string name="match_info">Match Info</string>
 
     <array name="league">
         <item>English Premier League</item>

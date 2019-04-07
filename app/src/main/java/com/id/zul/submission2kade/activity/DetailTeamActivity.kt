@@ -16,6 +16,7 @@ import kotlinx.android.synthetic.main.activity_detail_league.*
 class DetailTeamActivity : AppCompatActivity(), TeamDetailView {
 
     private lateinit var teamID: String
+    private lateinit var teamName: String
     private lateinit var teamDetailPresenter: TeamDetailPresenter
     private lateinit var teams: TeamResults
 
@@ -24,15 +25,16 @@ class DetailTeamActivity : AppCompatActivity(), TeamDetailView {
         setContentView(R.layout.activity_detail_league)
 
         teamID = intent.getStringExtra("teamID")
+        teamName = intent.getStringExtra("teamName")
 
-        setToolbar()
+        setToolbar(teamName)
         initializePresenter(teamID)
     }
 
-    private fun setToolbar() {
+    private fun setToolbar(teamName: String) {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar!!.title = "Team Details"
+        supportActionBar!!.title = teamName
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
     }
@@ -86,4 +88,5 @@ class DetailTeamActivity : AppCompatActivity(), TeamDetailView {
         progress_detail.visibility = View.GONE
         scroll_detail.visibility = View.VISIBLE
     }
+
 }

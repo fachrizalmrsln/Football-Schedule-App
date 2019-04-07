@@ -1,31 +1,29 @@
-package com.id.zul.submission2kade.presenter.team
+package com.id.zul.submission2kade.presenter.match
 
 import com.google.gson.Gson
 import com.id.zul.submission2kade.api.Get
 import com.id.zul.submission2kade.api.Request
 import com.id.zul.submission2kade.coroutine.ProviderContext
-import com.id.zul.submission2kade.model.team.Team
-import com.id.zul.submission2kade.view.team.TeamsView
+import com.id.zul.submission2kade.model.match.Previous
+import com.id.zul.submission2kade.view.match.PreviousMatchView
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class TeamsPresenter(
-    private val view: TeamsView,
+class PreviousMatchPresenter(
+    private val view: PreviousMatchView,
     private val apiRepository: Request,
     private val gson: Gson,
     private val context: ProviderContext = ProviderContext()
 ) {
 
-    fun getLeagueList(query: String) {
+    fun getPreviousMatch(query: String) {
         view.setLoading()
-
         GlobalScope.launch(context.main) {
-            val dataLeague = gson.fromJson(
-                apiRepository
-                    .getRequestAsync(Get.getTeams(query)).await(),
-                Team::class.java
+            val data = gson.fromJson(
+                apiRepository.getRequestAsync(Get.getPreviousMatch(query)).await(),
+                Previous::class.java
             )
-            view.setInItData(dataLeague.teams)
+            view.setInItData(data.previous)
             view.unSetLoading()
         }
     }

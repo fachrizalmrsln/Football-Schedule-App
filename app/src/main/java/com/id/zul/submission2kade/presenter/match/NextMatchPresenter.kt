@@ -20,7 +20,7 @@ class NextMatchPresenter(
         view.setLoading()
         GlobalScope.launch(context.main) {
             val data = gson.fromJson(
-                apiRepository.getRequest(Get.getNextMatch(query)).await(),
+                apiRepository.getRequestAsync(Get.getNextMatch(query)).await(),
                 Match::class.java
             )
             view.setInItData(data.match)

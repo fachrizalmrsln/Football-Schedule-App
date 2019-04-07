@@ -19,4 +19,5 @@ class SearchActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar!!.title = "Searching"
     }
+
 }

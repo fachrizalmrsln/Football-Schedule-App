@@ -30,26 +30,26 @@ object Get {
             .toString()
     }
 
-    fun getPreviousNext(id: String?): String {
+    fun getPreviousMatch(leagueID: String?): String {
         return Uri.parse(BuildConfig.BASE_URL).buildUpon()
             .appendPath("api")
             .appendPath("v1")
             .appendPath("json")
             .appendPath(BuildConfig.API_KEY)
             .appendPath("eventspastleague.php")
-            .appendQueryParameter("id", id)
+            .appendQueryParameter("id", leagueID)
             .build()
             .toString()
     }
 
-    fun getNextMatch(id: String?): String {
+    fun getNextMatch(leagueID: String?): String {
         return Uri.parse(BuildConfig.BASE_URL).buildUpon()
             .appendPath("api")
             .appendPath("v1")
             .appendPath("json")
             .appendPath(BuildConfig.API_KEY)
             .appendPath("eventsnextleague.php")
-            .appendQueryParameter("id", id)
+            .appendQueryParameter("id", leagueID)
             .build()
             .toString()
     }

@@ -30,7 +30,8 @@ class TeamsAdapter(private var context: Context, private val results: List<TeamR
         holder.bindItem(results[position])
         holder.itemView.setOnClickListener {
             context.startActivity<DetailTeamActivity>(
-                "teamID" to results[position].idTeam
+                "teamID" to results[position].idTeam,
+                "teamName" to results[position].nameTeam
             )
         }
     }

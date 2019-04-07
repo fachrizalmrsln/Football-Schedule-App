@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/size20"
+        android:elevation="@dimen/size20"
+        android:layout_margin="@dimen/margin8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_date_previous_template"
+                    android:layout_width="@dimen/size200"
+                    android:layout_height="wrap_content"
+                    android:text="@string/date"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/margin8"
+                    android:textSize="@dimen/textSize16"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/text_time_previous_template"
+                    android:layout_width="@dimen/size200"
+                    android:layout_height="wrap_content"
+                    android:text="@string/time_dummy"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/margin8"
+                    android:textSize="@dimen/textSize16"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/padding8"
+                android:orientation="horizontal"
+                tools:ignore="DisableBaselineAlignment">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:padding="@dimen/padding8"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_team1_previous_template"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/textSize16"
+                        android:layout_margin="@dimen/margin4"
+                        android:gravity="center"
+                        android:textColor="@color/colorPrimary"
+                        android:text="@string/teams"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:padding="@dimen/padding8"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/text_score1_previous_template"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/textSize18"
+                        android:layout_margin="@dimen/margin4"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="@string/score"
+                        tools:ignore="NestedWeights"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/textSize18"
+                        android:layout_margin="@dimen/margin4"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="@string/vs"/>
+
+                    <TextView
+                        android:id="@+id/text_score2_previous_template"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/textSize18"
+                        android:layout_margin="@dimen/margin4"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="@string/score"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:padding="@dimen/padding8"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_team2_previous_template"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/textSize16"
+                        android:layout_margin="@dimen/margin4"
+                        android:gravity="center"
+                        android:textColor="@color/colorPrimary"
+                        android:text="@string/teams"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

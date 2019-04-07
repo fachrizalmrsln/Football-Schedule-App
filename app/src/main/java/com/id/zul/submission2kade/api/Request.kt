@@ -7,7 +7,7 @@ import java.net.URL
 
 class Request {
 
-    fun getRequest(url: String): Deferred<String> = GlobalScope.async {
+    fun getRequestAsync(url: String): Deferred<String> = GlobalScope.async {
         URL(url).readText()
     }
 

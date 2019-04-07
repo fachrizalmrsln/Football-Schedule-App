@@ -12,8 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.DetailMatchActivity">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity
+            android:name=".activity.DetailMatchActivity"
+            android:parentActivityName=".activity.DetailMatchActivity">
         </activity>
         <activity android:name=".activity.SearchActivity">
         </activity>

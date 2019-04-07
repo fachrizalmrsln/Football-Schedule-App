@@ -2,7 +2,7 @@ package com.id.zul.submission2kade.model.match
 
 import com.google.gson.annotations.SerializedName
 
-data class MatchResults(
+data class PreviousResults(
     @SerializedName("idEvent")
     var idEvent: String? = null,
     @SerializedName("idSoccerXML")

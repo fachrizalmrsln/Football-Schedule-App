@@ -21,7 +21,7 @@ class TeamDetailPresenter(
             view.setLoading()
             val dataTeams = gson.fromJson(
                 apiRepository
-                    .getRequest(Get.getTeamDetail(teamId)).await(),
+                    .getRequestAsync(Get.getTeamDetail(teamId)).await(),
                 Team::class.java
             )
             view.setInItData(dataTeams.teams[0])

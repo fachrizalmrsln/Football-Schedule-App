@@ -17,7 +17,8 @@ class FragmentMatchContainer : Fragment() {
     private lateinit var tabLayout: TabLayout
     private lateinit var viewerPager: ViewPager
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?):
+            View? {
         val view = inflater
             .inflate(R.layout.fragment_match_container, container, false)
 
@@ -49,7 +50,6 @@ class FragmentMatchContainer : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String): Boolean {
-
                 return false
             }
         })
