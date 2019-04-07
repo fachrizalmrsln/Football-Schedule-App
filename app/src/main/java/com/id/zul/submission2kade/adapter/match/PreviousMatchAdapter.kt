@@ -25,52 +25,13 @@ class PreviousMatchAdapter(private val context: Context, private val results: Li
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         holder.bindItem(results[position])
         holder.itemView.setOnClickListener {
             val item = results[position]
-
-            if (item.strHomeTeam!!.isEmpty())
-                item.strHomeTeam = "Unknown"
-            if (item.strAwayTeam!!.isEmpty())
-                item.strAwayTeam = "Unknown"
-
-            if (item.strLeague!!.isEmpty())
-                item.strLeague = "Unknown"
-
-            if (item.dateEvent!!.isEmpty())
-                item.dateEvent = "Unknown"
-            if (item.strTime!!.isEmpty())
-                item.strTime = "Unknown"
-
-            if (item.intHomeScore!!.isEmpty())
-                item.intHomeScore = "Unknown"
-            if (item.intAwayScore!!.isEmpty())
-                item.intAwayScore = "Unknown"
-
-            if (item.strHomeGoalDetails == null)
-                item.strHomeGoalDetails = "Unknown"
-            if (item.strAwayGoalDetails == null)
-                item.strAwayGoalDetails = "Unknown"
-
-            if (item.intHomeShots == null)
-                item.intHomeShots = "Unknown"
-            if (item.intAwayShots == null)
-                item.intAwayShots = "Unknown"
-
             context.startActivity<DetailMatchActivity>(
-                "match" to item.idEvent,
-                "homeTeam" to item.strHomeTeam,
-                "awayTeam" to item.strAwayTeam,
-                "league" to item.strLeague,
-                "date" to item.dateEvent,
-                "time" to item.strTime,
-                "goalHome" to item.intHomeScore,
-                "goalAway" to item.intAwayScore,
-                "soccerHome" to item.strHomeGoalDetails,
-                "soccerAway" to item.strAwayGoalDetails,
-                "shootHome" to item.intHomeShots,
-                "shootAway" to item.intAwayShots
+                "matchID" to item.idEvent,
+                "homeTeamID" to item.idHomeTeam,
+                "awayTeamID" to item.idAwayTeam
             )
         }
     }
@@ -87,6 +48,8 @@ class PreviousMatchAdapter(private val context: Context, private val results: Li
 
         private lateinit var getDate: String
         private lateinit var getTime: String
+
+        private lateinit var simpleDateFormat: SimpleDateFormat
 
         @SuppressLint("SetTextI18n")
         fun bindItem(results: PreviousResults) {
@@ -109,13 +72,20 @@ class PreviousMatchAdapter(private val context: Context, private val results: Li
             val formatDate = SimpleDateFormat("yyyy-MM-dd")
             formatDate.timeZone = TimeZone.getTimeZone("GMT")
             val date = formatDate.parse(getDate)
-            val simpleDateFormat = SimpleDateFormat("EEEE, dd MMMM")
+            val simpleDateFormat = SimpleDateFormat("EEEE, dd MMMM yyyy")
             getDate = simpleDateFormat.format(date)
         }
 
         @SuppressLint("SimpleDateFormat")
         private fun convertTime() {
-            val formatTime = SimpleDateFormat("HH:mm:ss")
+
+//            simpleDateFormat = if (getTime.count() < 6)
+//                SimpleDateFormat("HH:mm")
+//            else
+//                SimpleDateFormat("HH:mm:ss")
+
+            simpleDateFormat = SimpleDateFormat("HH:mm:ss")
+            val formatTime = SimpleDateFormat(simpleDateFormat.toPattern())
             formatTime.timeZone = TimeZone.getTimeZone("GMT")
             val time = formatTime.parse(getTime)
             val simpleDateFormat = SimpleDateFormat("kk:mm")

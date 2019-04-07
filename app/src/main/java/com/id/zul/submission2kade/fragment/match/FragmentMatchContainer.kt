@@ -35,11 +35,10 @@ class FragmentMatchContainer : Fragment() {
 
         val searchView = menu?.findItem(R.id.searchMenu)?.actionView as SearchView?
 
-        searchView?.queryHint = "Search here ..."
+        searchView?.queryHint = "search ..."
 
         searchView?.findViewById<EditText>(android.support.v7.appcompat.R.id.search_src_text)
             ?.setHintTextColor(Color.WHITE)
-
 
         searchView?.setOnQueryTextListener(object : android.support.v7.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {

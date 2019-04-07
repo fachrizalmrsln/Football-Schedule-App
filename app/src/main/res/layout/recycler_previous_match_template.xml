@@ -28,7 +28,7 @@
 
                 <TextView
                     android:id="@+id/text_date_previous_template"
-                    android:layout_width="@dimen/size200"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/date"
                     android:layout_gravity="center"
@@ -40,7 +40,7 @@
 
                 <TextView
                     android:id="@+id/text_time_previous_template"
-                    android:layout_width="@dimen/size200"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/time_dummy"
                     android:layout_gravity="center"

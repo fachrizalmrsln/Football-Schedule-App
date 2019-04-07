@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.SearchActivity">
+    tools:context=".activity.SearchActivity"
+    android:orientation="vertical">
 
     <include
         layout="@layout/toolbar"/>
 
-</android.support.constraint.ConstraintLayout>
+    <ProgressBar
+        android:layout_marginTop="@dimen/size250"
+        android:id="@+id/progress_search"
+        android:layout_width="@dimen/size60"
+        android:layout_height="@dimen/size60"
+        android:layout_gravity="center"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:listitem="@layout/recycler_previous_match_template">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

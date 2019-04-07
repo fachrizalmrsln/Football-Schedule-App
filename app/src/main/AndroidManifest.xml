@@ -17,7 +17,9 @@
             android:name=".activity.DetailMatchActivity"
             android:parentActivityName=".activity.DetailMatchActivity">
         </activity>
-        <activity android:name=".activity.SearchActivity">
+        <activity
+            android:name=".activity.SearchActivity"
+            android:parentActivityName=".activity.SearchActivity">
         </activity>
         <activity
             android:name=".activity.DetailTeamActivity"

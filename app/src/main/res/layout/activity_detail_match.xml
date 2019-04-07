@@ -11,9 +11,18 @@
     <include
         layout="@layout/toolbar"/>
 
+    <ProgressBar
+        android:id="@+id/progress_detail"
+        android:layout_width="@dimen/size60"
+        android:layout_height="@dimen/size60"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/size250"/>
+
     <ScrollView
+        android:id="@+id/scroll_detail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,6 +67,37 @@
                         android:padding="@dimen/padding8"
                         android:gravity="center"
                         android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/margin16">
+
+                            <ImageView
+                                android:id="@+id/image_team1_detail"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/size200"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="@dimen/margin8"
+                                android:layout_marginRight="@dimen/margin16"
+                                android:layout_marginTop="@dimen/margin8"
+                                android:layout_marginBottom="@dimen/margin8"
+                                tools:ignore="ContentDescription,RtlHardcoded"/>
+
+                            <ImageView
+                                android:id="@+id/image_team2_detail"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/size200"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="@dimen/margin16"
+                                android:layout_marginRight="@dimen/margin8"
+                                android:layout_marginTop="@dimen/margin8"
+                                android:layout_marginBottom="@dimen/margin8"
+                                tools:ignore="ContentDescription,RtlHardcoded"/>
+
+                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="fill_parent"

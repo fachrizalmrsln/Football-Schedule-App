@@ -54,4 +54,28 @@ object Get {
             .toString()
     }
 
+    fun getMatchDetail(id: String?): String {
+        return Uri.parse(BuildConfig.BASE_URL).buildUpon()
+            .appendPath("api")
+            .appendPath("v1")
+            .appendPath("json")
+            .appendPath(BuildConfig.API_KEY)
+            .appendPath("lookupevent.php")
+            .appendQueryParameter("id", id)
+            .build()
+            .toString()
+    }
+
+    fun getSearchMatch(query: String?): String {
+        return Uri.parse(BuildConfig.BASE_URL).buildUpon()
+            .appendPath("api")
+            .appendPath("v1")
+            .appendPath("json")
+            .appendPath(BuildConfig.API_KEY)
+            .appendPath("searchevents.php")
+            .appendQueryParameter("e", query)
+            .build()
+            .toString()
+    }
+
 }

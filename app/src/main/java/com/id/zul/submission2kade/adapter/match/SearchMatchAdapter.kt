@@ -14,13 +14,13 @@ import org.jetbrains.anko.startActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
-class NextMatchAdapter(private val context: Context, private val results: List<MatchResults>) :
-    RecyclerView.Adapter<NextMatchAdapter.ViewHolder>() {
+class SearchMatchAdapter(private val context: Context, private val results: List<MatchResults>) :
+    RecyclerView.Adapter<SearchMatchAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NextMatchAdapter.ViewHolder {
-        return NextMatchAdapter.ViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchMatchAdapter.ViewHolder {
+        return SearchMatchAdapter.ViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(com.id.zul.submission2kade.R.layout.recycler_next_match_template, parent, false)
+                .inflate(com.id.zul.submission2kade.R.layout.recycler_search_match_template, parent, false)
         )
     }
 
