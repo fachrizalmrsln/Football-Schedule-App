@@ -27,7 +27,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/text_date_template"
+                    android:id="@+id/text_date_search_template"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/date"
@@ -39,7 +39,7 @@
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:id="@+id/text_time_next_template"
+                    android:id="@+id/text_time_search_template"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/time_dummy"
@@ -68,7 +68,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/text_team1_template"
+                        android:id="@+id/text_team1_search_template"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/textSize16"
@@ -76,6 +76,7 @@
                         android:gravity="center"
                         android:textColor="@color/colorPrimary"
                         android:text="@string/teams"
+                        android:singleLine="true"
                         android:textStyle="bold"/>
 
                 </LinearLayout>
@@ -90,13 +91,39 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:textSize="@dimen/textSize18"
                         android:layout_margin="@dimen/margin4"
                         android:gravity="center"
                         android:layout_gravity="center"
+                        android:text="@string/zero"
+                        android:textColor="@color/colorAccent"
+                        tools:ignore="NestedWeights"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/textSize18"
+                        android:layout_margin="@dimen/margin4"
+                        android:gravity="center"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
                         android:text="@string/vs"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/textSize18"
+                        android:layout_margin="@dimen/margin4"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:textColor="@color/colorAccent"
+                        android:text="@string/zero"/>
 
                 </LinearLayout>
 
@@ -109,7 +136,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/text_team2_template"
+                        android:id="@+id/text_team2_search_template"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/textSize16"
@@ -117,6 +144,7 @@
                         android:gravity="center"
                         android:textColor="@color/colorPrimary"
                         android:text="@string/teams"
+                        android:singleLine="true"
                         android:textStyle="bold"/>
 
                 </LinearLayout>

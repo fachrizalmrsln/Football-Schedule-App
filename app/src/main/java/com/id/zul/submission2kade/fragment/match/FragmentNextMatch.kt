@@ -58,7 +58,9 @@ class FragmentNextMatch : Fragment(), NextMatchView {
         spinnerItems = resources.getStringArray(R.array.league)
         spinnerAdapter = ArrayAdapter(
             requireContext(),
-            android.R.layout.simple_spinner_dropdown_item, spinnerItems
+            R.layout.spinner_item,
+            R.id.text_spinner_item,
+            spinnerItems
         )
     }
 

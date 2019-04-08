@@ -4,7 +4,7 @@
     <string name="matches">Matches</string>
     <string name="teams">Teams</string>
     <string name="description_detail">Description</string>
-    <string name="title_detail">Title</string>
+    <string name="team_name">Team Name</string>
     <string name="title">Toolbar Title</string>
     <string name="search_menu_text">Search</string>
     <string name="year_template">1997</string>
@@ -22,6 +22,9 @@
     <string name="goal_soccer">Goal Soccer</string>
     <string name="league">League</string>
     <string name="match_info">Match Info</string>
+    <string name="zero">0</string>
+    <string name="team_details">Team Details</string>
+    <string name="spinner_list">Spinner List</string>
 
     <array name="league">
         <item>English Premier League</item>

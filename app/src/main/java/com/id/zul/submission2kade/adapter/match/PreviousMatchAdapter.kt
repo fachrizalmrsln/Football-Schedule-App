@@ -69,7 +69,7 @@ class PreviousMatchAdapter(private val context: Context, private val results: Li
 
         @SuppressLint("SimpleDateFormat")
         private fun convertDate() {
-            val formatDate = SimpleDateFormat("yyyy-MM-dd")
+            val formatDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
             formatDate.timeZone = TimeZone.getTimeZone("GMT")
             val date = formatDate.parse(getDate)
             val simpleDateFormat = SimpleDateFormat("EEEE, dd MMMM yyyy")
@@ -78,13 +78,7 @@ class PreviousMatchAdapter(private val context: Context, private val results: Li
 
         @SuppressLint("SimpleDateFormat")
         private fun convertTime() {
-
-//            simpleDateFormat = if (getTime.count() < 6)
-//                SimpleDateFormat("HH:mm")
-//            else
-//                SimpleDateFormat("HH:mm:ss")
-
-            simpleDateFormat = SimpleDateFormat("HH:mm:ss")
+            simpleDateFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
             val formatTime = SimpleDateFormat(simpleDateFormat.toPattern())
             formatTime.timeZone = TimeZone.getTimeZone("GMT")
             val time = formatTime.parse(getTime)

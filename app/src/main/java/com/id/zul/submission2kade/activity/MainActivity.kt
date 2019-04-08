@@ -21,11 +21,11 @@ class MainActivity : AppCompatActivity() {
     private fun setToolbar() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar!!.title = "Football App"
+        supportActionBar?.title = "Football App"
     }
 
     private fun setBottomNav() {
-        bottom_nav.setOnNavigationItemSelectedListener { items ->
+        bottom_nav_main.setOnNavigationItemSelectedListener { items ->
             when (items.itemId) {
 
                 R.id.nav_matches -> {
@@ -39,14 +39,14 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-        bottom_nav.selectedItemId = R.id.nav_matches
+        bottom_nav_main.selectedItemId = R.id.nav_matches
     }
 
     private fun getMatchView() {
         supportFragmentManager
             .beginTransaction()
             .replace(
-                R.id.container_main_view,
+                R.id.container_view_main,
                 FragmentMatchContainer(), FragmentMatchContainer::class.java.simpleName
             )
             .commit()
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager
             .beginTransaction()
             .replace(
-                R.id.container_main_view,
+                R.id.container_view_main,
                 FragmentTeamsContainer(), FragmentTeamsContainer::class.java.simpleName
             )
             .commit()

@@ -42,12 +42,12 @@ class TeamsAdapter(private var context: Context, private val results: List<TeamR
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        private val textViewLeague: TextView = itemView.findViewById(R.id.text_template)
-        private val imageViewLeague: ImageView = itemView.findViewById(R.id.image_template)
+        private val textViewTeam: TextView = itemView.findViewById(R.id.text_team_template)
+        private val imageViewTeam: ImageView = itemView.findViewById(R.id.image_team_template)
 
         fun bindItem(teams: TeamResults) {
-            textViewLeague.text = teams.nameTeam
-            Picasso.get().load(teams.logoTeam).into(imageViewLeague)
+            textViewTeam.text = teams.nameTeam
+            Picasso.get().load(teams.logoTeam).into(imageViewTeam)
         }
 
     }

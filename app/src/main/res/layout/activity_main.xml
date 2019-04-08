@@ -12,21 +12,21 @@
         layout="@layout/toolbar"/>
 
     <FrameLayout
-        android:id="@+id/container_main_view"
+        android:id="@+id/container_view_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/view_main"
+        android:layout_above="@id/view_line_main"
         android:layout_below="@id/toolbar_main"/>
 
     <View
-        android:id="@+id/view_main"
+        android:id="@+id/view_line_main"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size1"
         android:background="@android:color/darker_gray"
-        android:layout_above="@id/bottom_nav"/>
+        android:layout_above="@id/bottom_nav_main"/>
 
     <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom_nav"
+        android:id="@+id/bottom_nav_main"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size60"
         android:layout_alignParentBottom="true"

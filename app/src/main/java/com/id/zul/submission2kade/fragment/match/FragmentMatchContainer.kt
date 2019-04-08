@@ -31,7 +31,7 @@ class FragmentMatchContainer : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater?.inflate(R.menu.search_menu, menu)
+        inflater?.inflate(R.menu.menu_search, menu)
 
         val searchView = menu?.findItem(R.id.searchMenu)?.actionView as SearchView?
 

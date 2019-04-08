@@ -40,10 +40,10 @@ class NextMatchAdapter(private val context: Context, private val results: List<M
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        private val textViewDate = itemView.findViewById<TextView>(R.id.text_date_template)
-        private val textViewTeam1 = itemView.findViewById<TextView>(R.id.text_team1_template)
-        private val textViewTeam2 = itemView.findViewById<TextView>(R.id.text_team2_template)
-        private val textViewTime = itemView.findViewById<TextView>(R.id.text_time_next_template)
+        private val textViewDate = itemView.findViewById<TextView>(R.id.text_date_next_match_template)
+        private val textViewTeam1 = itemView.findViewById<TextView>(R.id.text_team1_next_match_template)
+        private val textViewTeam2 = itemView.findViewById<TextView>(R.id.text_team2_next_match_template)
+        private val textViewTime = itemView.findViewById<TextView>(R.id.text_time_next_match_template)
 
         private lateinit var getDate: String
         private lateinit var getTime: String
@@ -66,7 +66,7 @@ class NextMatchAdapter(private val context: Context, private val results: List<M
 
         @SuppressLint("SimpleDateFormat")
         private fun convertDate() {
-            val formatDate = SimpleDateFormat("yyyy-MM-dd")
+            val formatDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
             formatDate.timeZone = TimeZone.getTimeZone("GMT")
             val date = formatDate.parse(getDate)
             val simpleDateFormat = SimpleDateFormat("EEEE, dd MMMM yyyy")
@@ -75,13 +75,7 @@ class NextMatchAdapter(private val context: Context, private val results: List<M
 
         @SuppressLint("SimpleDateFormat")
         private fun convertTime() {
-
-//            simpleDateFormat = if (getTime.count() < 6)
-//                SimpleDateFormat("HH:mm")
-//            else
-//                SimpleDateFormat("HH:mm:ss")
-
-            simpleDateFormat = SimpleDateFormat("HH:mm:ss")
+            simpleDateFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
             val formatTime = SimpleDateFormat(simpleDateFormat.toPattern())
             formatTime.timeZone = TimeZone.getTimeZone("GMT")
             val time = formatTime.parse(getTime)

@@ -6,27 +6,27 @@
     android:layout_height="match_parent">
 
     <Spinner
-        android:id="@+id/spinner_next_match"
+        android:id="@+id/spinner_all_team"
         android:layout_width="@dimen/size250"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin8"
         android:backgroundTint="@color/colorAccent"/>
 
     <ProgressBar
-        android:id="@+id/progress_next_match"
+        android:id="@+id/progress_all_team"
         android:layout_width="@dimen/size60"
         android:layout_height="@dimen/size60"
-        android:layout_below="@id/spinner_next_match"
+        android:layout_below="@id/spinner_all_team"
         android:visibility="gone"
         android:layout_marginTop="@dimen/size200"
         android:layout_centerInParent="true"/>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_next_match"
-        android:layout_below="@+id/spinner_next_match"
+        android:id="@+id/recycler_all_team"
+        android:layout_below="@+id/spinner_all_team"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible"
-        tools:listitem="@layout/recycler_next_match_template"/>
+        tools:listitem="@layout/recycler_team_template"/>
 
 </RelativeLayout>

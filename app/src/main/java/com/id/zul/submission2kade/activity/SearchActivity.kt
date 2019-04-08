@@ -31,22 +31,26 @@ class SearchActivity : AppCompatActivity(), SearchMatchView {
         setToolbar()
         initializePresenter()
         setRecycler()
+        setPresenter()
 
-        searchMatchPresenter.getNextMatch(intent.getStringExtra("query"))
     }
 
     private fun setToolbar() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar!!.title = "Searching"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar?.title = "Searching"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
     }
 
     private fun initializePresenter() {
         val request = Request()
         val gson = Gson()
         searchMatchPresenter = SearchMatchPresenter(this, request, gson)
+    }
+
+    private fun setPresenter() {
+        searchMatchPresenter.getNextMatch(intent.getStringExtra("query"))
     }
 
     private fun setRecycler() {
@@ -57,7 +61,7 @@ class SearchActivity : AppCompatActivity(), SearchMatchView {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
-        menuInflater.inflate(R.menu.search_menu, menu)
+        menuInflater.inflate(R.menu.menu_search, menu)
 
         val searchView = menu?.findItem(R.id.searchMenu)?.actionView as SearchView?
 

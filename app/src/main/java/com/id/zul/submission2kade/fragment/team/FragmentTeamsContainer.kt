@@ -1,100 +1,39 @@
 package com.id.zul.submission2kade.fragment.team
 
 import android.os.Bundle
+import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
+import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.ProgressBar
-import android.widget.Spinner
-import com.google.gson.Gson
 import com.id.zul.submission2kade.R
-import com.id.zul.submission2kade.adapter.team.TeamsAdapter
-import com.id.zul.submission2kade.api.Request
-import com.id.zul.submission2kade.model.team.TeamResults
-import com.id.zul.submission2kade.presenter.team.TeamsPresenter
-import com.id.zul.submission2kade.view.team.TeamsView
 
-class FragmentTeamsContainer : Fragment(), TeamsView {
+class FragmentTeamsContainer : Fragment() {
 
-    private var items: MutableList<TeamResults> = mutableListOf()
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: TeamsAdapter
-    private lateinit var teamsPresenter: TeamsPresenter
-    private lateinit var spinner: Spinner
-    private lateinit var spinnerItems: Array<String>
-    private lateinit var spinnerAdapter: ArrayAdapter<String>
-    private lateinit var progressBar: ProgressBar
+    private lateinit var tabLayout: TabLayout
+    private lateinit var viewerPager: ViewPager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?):
             View? {
         val view = inflater
             .inflate(R.layout.fragment_team_container, container, false)
 
-        signInViews(view)
-        initializePresenter()
-        setRecycler()
-        setSpinner()
+        singInViews(view)
+        setHasOptionsMenu(true)
+        setPager()
 
         return view
     }
 
-    private fun signInViews(view: View) {
-        progressBar = view.findViewById(R.id.progress_team)
-        recyclerView = view.findViewById(R.id.recycler_team)
-        spinner = view.findViewById(R.id.spinner)
-
-        //spinner component
-        spinnerItems = resources.getStringArray(R.array.league)
-        spinnerAdapter = ArrayAdapter(
-            requireContext(),
-            android.R.layout.simple_spinner_dropdown_item, spinnerItems
-        )
+    private fun singInViews(view: View) {
+        tabLayout = view.findViewById(R.id.tab_layout_team_container)
+        viewerPager = view.findViewById(R.id.viewer_fragment_team_container)
     }
 
-    private fun initializePresenter() {
-        val request = Request()
-        val gson = Gson()
-        teamsPresenter = TeamsPresenter(this, request, gson)
-    }
-
-    private fun setRecycler() {
-        recyclerView.layoutManager = GridLayoutManager(activity, 2)
-        adapter = TeamsAdapter(this.context!!, items)
-        recyclerView.adapter = adapter
-    }
-
-    private fun setSpinner() {
-        spinner.adapter = spinnerAdapter
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                val query = spinner.selectedItem.toString()
-                teamsPresenter.getLeagueList(query)
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>) {}
-        }
-
-    }
-
-    override fun setLoading() {
-        progressBar.visibility = View.VISIBLE
-        recyclerView.visibility = View.GONE
-    }
-
-    override fun setInItData(dataTeam: List<TeamResults>) {
-        items.clear()
-        items.addAll(dataTeam)
-        adapter.notifyDataSetChanged()
-    }
-
-    override fun unSetLoading() {
-        progressBar.visibility = View.GONE
-        recyclerView.visibility = View.VISIBLE
+    private fun setPager() {
+        viewerPager.adapter = TabFragmentTeam(childFragmentManager)
+        tabLayout.setupWithViewPager(viewerPager)
     }
 
 }

@@ -1,30 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity.SearchActivity"
-    android:orientation="vertical">
-
-    <include
-        layout="@layout/toolbar"/>
+    android:layout_height="match_parent">
 
     <ProgressBar
-        android:layout_marginTop="@dimen/size250"
-        android:id="@+id/progress_search"
+        android:id="@+id/progress_favorite_team"
         android:layout_width="@dimen/size60"
         android:layout_height="@dimen/size60"
         android:visibility="gone"
-        android:layout_gravity="center"/>
+        android:layout_marginTop="@dimen/size200"
+        android:layout_centerInParent="true"/>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_search"
+        android:id="@+id/recycler_favorite_team"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible"
-        tools:listitem="@layout/recycler_search_match_template">
+        tools:listitem="@layout/recycler_team_favorite_template"/>
 
-    </android.support.v7.widget.RecyclerView>
-
-</LinearLayout>
+</RelativeLayout>
