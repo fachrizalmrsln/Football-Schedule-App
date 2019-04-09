@@ -156,6 +156,21 @@ class DetailTeamActivity : AppCompatActivity(), TeamDetailView {
     }
 
     private fun setFavorite() {
+
+        favorite = FavoriteTeamModel(
+            teamID,
+            teamName,
+            teamAka,
+            teamYear,
+            teamLeague,
+            teamCountry,
+            teamLogo,
+            teamStadiumIcon,
+            teamStadiumName,
+            teamStadiumLocation,
+            teamDescription
+        )
+
         try {
             database.use {
                 insert(
