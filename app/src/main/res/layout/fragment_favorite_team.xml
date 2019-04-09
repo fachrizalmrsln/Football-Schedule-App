@@ -5,19 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ProgressBar
-        android:id="@+id/progress_favorite_team"
-        android:layout_width="@dimen/size60"
-        android:layout_height="@dimen/size60"
+    <LinearLayout
+        android:id="@+id/view_empty_favorite_team"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:gravity="center"
         android:visibility="gone"
-        android:layout_marginTop="@dimen/size200"
-        android:layout_centerInParent="true"/>
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/upz"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold|italic"
+            android:textSize="@dimen/textSize20"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_favorite_team_found"
+            android:textColor="@color/colorAccent"
+            android:gravity="center"
+            android:textSize="@dimen/textSize16"/>
+
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_favorite_team"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible"
-        tools:listitem="@layout/recycler_team_favorite_template"/>
+        tools:listitem="@layout/recycler_favorite_team_template"/>
 
 </RelativeLayout>

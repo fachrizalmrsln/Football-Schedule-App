@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Submission2KADE</string>
     <string name="team_name_template">Team Name</string>
     <string name="matches">Matches</string>
@@ -25,6 +25,9 @@
     <string name="zero">0</string>
     <string name="team_details">Team Details</string>
     <string name="spinner_list">Spinner List</string>
+    <string name="no_favorite_match_found">No Favorite Match Found !</string>
+    <string name="upz" tools:ignore="TypographyEllipsis">Upz ...</string>
+    <string name="no_favorite_team_found">No Favorite Team Found !</string>
 
     <array name="league">
         <item>English Premier League</item>
