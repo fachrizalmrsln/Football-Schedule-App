@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import com.id.zul.submission3kade.R
+import com.id.zul.submission3kade.fragment.league.FragmentLeagueContainer
 import com.id.zul.submission3kade.fragment.match.FragmentMatchContainer
 import com.id.zul.submission3kade.fragment.team.FragmentTeamsContainer
 import kotlinx.android.synthetic.main.activity_main.*
@@ -36,6 +37,10 @@ class MainActivity : AppCompatActivity() {
                     getTeamView()
                 }
 
+                R.id.nav_league -> {
+                    getLeagueView()
+                }
+
             }
             true
         }
@@ -58,6 +63,16 @@ class MainActivity : AppCompatActivity() {
             .replace(
                 R.id.container_view_main,
                 FragmentTeamsContainer(), FragmentTeamsContainer::class.java.simpleName
+            )
+            .commit()
+    }
+
+    private fun getLeagueView(){
+        supportFragmentManager
+            .beginTransaction()
+            .replace(
+                R.id.container_view_main,
+                FragmentLeagueContainer(), FragmentLeagueContainer::class.java.simpleName
             )
             .commit()
     }

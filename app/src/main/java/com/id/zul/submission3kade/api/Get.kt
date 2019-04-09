@@ -78,4 +78,16 @@ object Get {
             .toString()
     }
 
+    fun getDetailLeague(id: String?): String{
+        return Uri.parse(BuildConfig.BASE_URL).buildUpon()
+            .appendPath("api")
+            .appendPath("v1")
+            .appendPath("json")
+            .appendPath(BuildConfig.API_KEY)
+            .appendPath("lookupleague.php")
+            .appendQueryParameter("id", id)
+            .build()
+            .toString()
+    }
+
 }

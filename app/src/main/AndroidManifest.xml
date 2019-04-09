@@ -13,19 +13,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity
-            android:name="com.id.zul.submission3kade.activity.DetailMatchActivity"
-            android:parentActivityName="com.id.zul.submission3kade.activity.DetailMatchActivity">
+        <activity android:name=".activity.DetailLeagueActivity">
         </activity>
         <activity
-            android:name="com.id.zul.submission3kade.activity.SearchActivity"
-            android:parentActivityName="com.id.zul.submission3kade.activity.SearchActivity">
+            android:name=".activity.DetailMatchActivity"
+            android:parentActivityName=".activity.DetailMatchActivity">
         </activity>
         <activity
-            android:name="com.id.zul.submission3kade.activity.DetailTeamActivity"
-            android:parentActivityName="com.id.zul.submission3kade.activity.DetailTeamActivity">
+            android:name=".activity.SearchActivity"
+            android:parentActivityName=".activity.SearchActivity">
         </activity>
-        <activity android:name="com.id.zul.submission3kade.activity.MainActivity">
+        <activity
+            android:name=".activity.DetailTeamActivity"
+            android:parentActivityName=".activity.DetailTeamActivity">
+        </activity>
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
