@@ -114,25 +114,29 @@ class DetailMatchActivity : AppCompatActivity(), MatchDetailView {
         else
             text_score2_detail_match.text = dataMatch.intAwayScore
 
-        if (dataMatch.strHomeGoalDetails.toString() == "null")
-            text_goal_soccer1_detail_match.text = "-"
-        else
-            text_goal_soccer1_detail_match.text = dataMatch.strHomeGoalDetails.toString()
+        when {
+            dataMatch.strHomeGoalDetails.toString() == "null" -> text_goal_soccer1_detail_match.text = "-"
+            dataMatch.strHomeGoalDetails.toString() == "" -> text_goal_soccer1_detail_match.text = "-"
+            else -> text_goal_soccer1_detail_match.text = dataMatch.strHomeGoalDetails.toString()
+        }
 
-        if (dataMatch.strAwayGoalDetails.toString() == "null")
-            text_goal_soccer2_detail_match.text = "-"
-        else
-            text_goal_soccer2_detail_match.text = dataMatch.strAwayGoalDetails.toString()
+        when {
+            dataMatch.strAwayGoalDetails.toString() == "null" -> text_goal_soccer2_detail_match.text = "-"
+            dataMatch.strAwayGoalDetails.toString() == "" -> text_goal_soccer2_detail_match.text = "-"
+            else -> text_goal_soccer2_detail_match.text = dataMatch.strAwayGoalDetails.toString()
+        }
 
-        if (dataMatch.intHomeShots.toString() == "null")
-            text_shoot1_detail_match.text = "-"
-        else
-            text_shoot1_detail_match.text = dataMatch.intHomeShots.toString()
+        when {
+            dataMatch.intHomeShots.toString() == "null" -> text_shoot1_detail_match.text = "-"
+            dataMatch.intHomeShots.toString() == "0" -> text_shoot1_detail_match.text = "-"
+            else -> text_shoot1_detail_match.text = dataMatch.intHomeShots.toString()
+        }
 
-        if (dataMatch.intAwayShots.toString() == "null")
-            text_shoot2_detail_match.text = "-"
-        else
-            text_shoot2_detail_match.text = dataMatch.intAwayShots.toString()
+        when {
+            dataMatch.intAwayShots.toString() == "null" -> text_shoot2_detail_match.text = "-"
+            dataMatch.intAwayShots.toString() == "0" -> text_shoot2_detail_match.text = "-"
+            else -> text_shoot2_detail_match.text = dataMatch.intAwayShots.toString()
+        }
     }
 
     override fun setInItDataTeam(dataTeam: TeamResults, isHomeAway: Boolean) {
