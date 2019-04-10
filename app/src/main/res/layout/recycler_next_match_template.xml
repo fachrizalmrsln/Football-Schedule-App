@@ -33,8 +33,8 @@
                     android:text="@string/date"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:layout_margin="@dimen/margin8"
-                    android:textSize="@dimen/textSize18"
+                    android:layout_marginTop="@dimen/margin8"
+                    android:textSize="@dimen/textSize16"
                     android:textColor="@android:color/white"
                     android:textStyle="bold"/>
 

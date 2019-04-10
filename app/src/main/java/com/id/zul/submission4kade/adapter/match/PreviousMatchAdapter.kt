@@ -10,6 +10,7 @@ import android.widget.TextView
 import com.id.zul.submission4kade.R
 import com.id.zul.submission4kade.activity.DetailMatchActivity
 import com.id.zul.submission4kade.model.match.PreviousResults
+import com.id.zul.submission4kade.utils.Utils
 import org.jetbrains.anko.startActivity
 import java.text.SimpleDateFormat
 import java.util.*
@@ -46,7 +47,6 @@ class PreviousMatchAdapter(private val context: Context, private val results: Li
         private val textViewScore2 = itemView.findViewById<TextView>(R.id.text_score2_previous_template)
         private val textViewTime = itemView.findViewById<TextView>(R.id.text_time_previous_template)
 
-        private lateinit var getDate: String
         private lateinit var getTime: String
 
         private lateinit var simpleDateFormat: SimpleDateFormat
@@ -57,23 +57,11 @@ class PreviousMatchAdapter(private val context: Context, private val results: Li
             textViewTeam2.text = results.strAwayTeam
             textViewScore1.text = results.intHomeScore
             textViewScore2.text = results.intAwayScore
-
-            getDate = results.dateEvent!!
-            convertDate()
-            textViewDate.text = getDate
+            textViewDate.text = results.dateEvent?.let { Utils.formatToDate(it) }
 
             getTime = results.strTime!!
             convertTime()
             textViewTime.text = "$getTime WIB"
-        }
-
-        @SuppressLint("SimpleDateFormat")
-        private fun convertDate() {
-            val formatDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-            formatDate.timeZone = TimeZone.getTimeZone("GMT")
-            val date = formatDate.parse(getDate)
-            val simpleDateFormat = SimpleDateFormat("EEEE, dd MMMM yyyy")
-            getDate = simpleDateFormat.format(date)
         }
 
         @SuppressLint("SimpleDateFormat")

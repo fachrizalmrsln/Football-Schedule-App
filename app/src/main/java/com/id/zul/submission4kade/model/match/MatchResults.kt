@@ -3,6 +3,7 @@ package com.id.zul.submission4kade.model.match
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
+import java.util.*
 
 @Parcelize
 data class MatchResults(
@@ -77,7 +78,7 @@ data class MatchResults(
     @SerializedName("intAwayShots")
     var intAwayShots: String? = null,
     @SerializedName("dateEvent")
-    var dateEvent: String? = null,
+    var dateEvent: Date? = null,
     @SerializedName("strDate")
     var strDate: String? = null,
     @SerializedName("strTime")

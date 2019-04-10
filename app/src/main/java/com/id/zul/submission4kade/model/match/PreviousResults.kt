@@ -1,6 +1,7 @@
 package com.id.zul.submission4kade.model.match
 
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
 data class PreviousResults(
     @SerializedName("idEvent")
@@ -74,7 +75,7 @@ data class PreviousResults(
     @SerializedName("intAwayShots")
     var intAwayShots: Any? = null,
     @SerializedName("dateEvent")
-    var dateEvent: String? = null,
+    var dateEvent: Date? = null,
     @SerializedName("strDate")
     var strDate: String? = null,
     @SerializedName("strTime")

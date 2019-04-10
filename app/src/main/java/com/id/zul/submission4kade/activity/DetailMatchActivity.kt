@@ -18,6 +18,7 @@ import com.id.zul.submission4kade.model.match.FavoriteMatchModel
 import com.id.zul.submission4kade.model.match.MatchResults
 import com.id.zul.submission4kade.model.team.TeamResults
 import com.id.zul.submission4kade.presenter.match.MatchDetailPresenter
+import com.id.zul.submission4kade.utils.Utils
 import com.id.zul.submission4kade.view.match.MatchDetailView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail_match.*
@@ -35,7 +36,6 @@ class DetailMatchActivity : AppCompatActivity(), MatchDetailView {
     private lateinit var idEvent: String
     private lateinit var homeTeamID: String
     private lateinit var awayTeamID: String
-    private lateinit var dateEvent: String
     private lateinit var timeEvent: String
     private lateinit var favorite: FavoriteMatchModel
     private lateinit var matchDetailPresenter: MatchDetailPresenter
@@ -87,9 +87,8 @@ class DetailMatchActivity : AppCompatActivity(), MatchDetailView {
         text_league_detail_match.text = dataMatch.strLeague
         league = dataMatch.strLeague
 
-        convertDate(dataMatch.dateEvent!!)
-        text_date_detail_match.text = dateEvent
-        date = dateEvent
+        date = dataMatch.dateEvent.let { it?.let { it1 -> Utils.formatToDate(it1) } }
+        text_date_detail_match.text = date.toString()
 
         convertTime(dataMatch.strTime!!)
         text_time_detail_match.text = "$timeEvent WIB"
@@ -244,15 +243,6 @@ class DetailMatchActivity : AppCompatActivity(), MatchDetailView {
         matchDetailPresenter.getMatchDetail(idEvent)
         matchDetailPresenter.getTeamDetail(homeTeamID, true)
         matchDetailPresenter.getTeamDetail(awayTeamID, false)
-    }
-
-    @SuppressLint("SimpleDateFormat")
-    private fun convertDate(setDate: String) {
-        val formatDate = SimpleDateFormat("yyyy-MM-dd")
-        formatDate.timeZone = TimeZone.getTimeZone("GMT")
-        val date = formatDate.parse(setDate)
-        val simpleDateFormat = SimpleDateFormat("EEEE, dd MMMM yyyy")
-        dateEvent = simpleDateFormat.format(date)
     }
 
     @SuppressLint("SimpleDateFormat", "SetTextI18n")

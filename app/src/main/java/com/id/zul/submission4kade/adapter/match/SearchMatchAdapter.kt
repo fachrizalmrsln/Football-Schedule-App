@@ -10,6 +10,7 @@ import android.widget.TextView
 import com.id.zul.submission4kade.R
 import com.id.zul.submission4kade.activity.DetailMatchActivity
 import com.id.zul.submission4kade.model.match.MatchResults
+import com.id.zul.submission4kade.utils.Utils
 import org.jetbrains.anko.startActivity
 import java.text.SimpleDateFormat
 import java.util.*
@@ -45,7 +46,6 @@ class SearchMatchAdapter(private val context: Context, private val results: List
         private val textViewTeam2 = itemView.findViewById<TextView>(R.id.text_team2_search_template)
         private val textViewTime = itemView.findViewById<TextView>(R.id.text_time_search_template)
 
-        private lateinit var getDate: String
         private lateinit var getTime: String
 
         private lateinit var simpleDateFormat: SimpleDateFormat
@@ -55,22 +55,11 @@ class SearchMatchAdapter(private val context: Context, private val results: List
             textViewTeam1.text = results.strHomeTeam
             textViewTeam2.text = results.strAwayTeam
 
-            getDate = results.dateEvent!!
-            convertDate()
-            textViewDate.text = getDate
+            textViewDate.text = results.dateEvent?.let { Utils.formatToDate(it) }
 
             getTime = results.strTime!!
             convertTime()
             textViewTime.text = "$getTime WIB"
-        }
-
-        @SuppressLint("SimpleDateFormat")
-        private fun convertDate() {
-            val formatDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-            formatDate.timeZone = TimeZone.getTimeZone("GMT")
-            val date = formatDate.parse(getDate)
-            val simpleDateFormat = SimpleDateFormat("EEEE, dd MMMM yyyy")
-            getDate = simpleDateFormat.format(date)
         }
 
         @SuppressLint("SimpleDateFormat")
