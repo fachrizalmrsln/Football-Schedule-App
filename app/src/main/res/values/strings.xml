@@ -30,6 +30,7 @@
     <string name="no_favorite_team_found">No Favorite Team Found !</string>
     <string name="league">League</string>
     <string name="country">Country</string>
+    <string name="no_match_found">No Match Found !</string>
 
     <array name="league">
         <item>English Premier League</item>

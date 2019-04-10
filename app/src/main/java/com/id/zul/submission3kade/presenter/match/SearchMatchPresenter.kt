@@ -23,8 +23,13 @@ class SearchMatchPresenter(
                 apiRepository.getRequestAsync(Get.getSearchMatch(query)).await(),
                 SearchMatch::class.java
             )
-            view.setInItData(data.match)
-            view.unSetLoading()
+            if (data.match.isNullOrEmpty()) {
+                view.setNotFound()
+                view.unSetLoading()
+            } else {
+                view.setInItData(data.match)
+                view.unSetLoading()
+            }
         }
     }
 

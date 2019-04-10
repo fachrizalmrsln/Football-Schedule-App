@@ -85,14 +85,19 @@ class SearchActivity : AppCompatActivity(), SearchMatchView {
     }
 
     override fun setLoading() {
+        items.clear()
         progress_search.visibility = View.VISIBLE
         recycler_search.visibility = View.GONE
+        text_not_found_search.visibility = View.GONE
     }
 
     override fun setInItData(dataSearch: List<MatchResults>) {
-        items.clear()
         items.addAll(dataSearch)
         searchMachAdapter.notifyDataSetChanged()
+    }
+
+    override fun setNotFound() {
+        text_not_found_search.visibility = View.VISIBLE
     }
 
     override fun unSetLoading() {
