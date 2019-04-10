@@ -20,7 +20,7 @@
     <string name="shoot">Shoot</string>
     <string name="time_dummy">14:00</string>
     <string name="goal_soccer">Goal Soccer</string>
-    <string name="league">League</string>
+    <string name="league_info">League Info</string>
     <string name="match_info">Match Info</string>
     <string name="zero">0</string>
     <string name="team_details">Team Details</string>
@@ -28,6 +28,8 @@
     <string name="no_favorite_match_found">No Favorite Match Found !</string>
     <string name="upz" tools:ignore="TypographyEllipsis">Upz ...</string>
     <string name="no_favorite_team_found">No Favorite Team Found !</string>
+    <string name="league">League</string>
+    <string name="country">Country</string>
 
     <array name="league">
         <item>English Premier League</item>

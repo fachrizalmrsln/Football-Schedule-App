@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".activity.DetailLeagueActivity">
+        <activity
+            android:name=".activity.DetailLeagueActivity"
+            android:parentActivityName=".activity.DetailLeagueActivity">
         </activity>
         <activity
             android:name=".activity.DetailMatchActivity"

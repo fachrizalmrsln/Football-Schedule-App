@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    private fun getLeagueView(){
+    private fun getLeagueView() {
         supportFragmentManager
             .beginTransaction()
             .replace(

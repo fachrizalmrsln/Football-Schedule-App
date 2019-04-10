@@ -4,5 +4,5 @@ import com.google.gson.annotations.SerializedName
 
 data class League(
     @SerializedName("leagues")
-    var leagues: List<League>
+    var leagues: List<LeagueResults>
 )

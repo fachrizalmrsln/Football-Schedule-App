@@ -78,7 +78,7 @@ object Get {
             .toString()
     }
 
-    fun getDetailLeague(id: String?): String{
+    fun getDetailLeague(id: String?): String {
         return Uri.parse(BuildConfig.BASE_URL).buildUpon()
             .appendPath("api")
             .appendPath("v1")
