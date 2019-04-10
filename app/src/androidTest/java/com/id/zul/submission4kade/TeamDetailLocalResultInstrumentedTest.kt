@@ -17,6 +17,6 @@ class TeamDetailLocalResultInstrumentedTest {
     fun useAppContext() {
         // ProviderContext of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("com.id.zul.submission2kade", appContext.packageName)
+        assertEquals("com.id.zul.submission4kade", appContext.packageName)
     }
 }

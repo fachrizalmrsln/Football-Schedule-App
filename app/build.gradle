@@ -66,7 +66,9 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     implementation 'com.google.code.gson:gson:2.8.5'
 
-    //other
+    //mockito
+    testImplementation 'org.mockito:mockito-core:2.23.4'
+    testImplementation "org.mockito:mockito-inline:2.23.4"
 
     //
     testImplementation 'junit:junit:4.12'
