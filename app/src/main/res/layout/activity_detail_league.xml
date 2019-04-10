@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.id.zul.submission3kade.activity.DetailLeagueActivity">
+    tools:context="com.id.zul.submission4kade.activity.DetailLeagueActivity">
 
     <include
         layout="@layout/toolbar"/>
