@@ -36,7 +36,7 @@ class SearchMatchPresenterTest {
     }
 
     @Test
-    fun getNextMatch() {
+    fun getSearchMatch() {
         val matches: MutableList<MatchResults> = mutableListOf()
         val query = "Arsenal"
 

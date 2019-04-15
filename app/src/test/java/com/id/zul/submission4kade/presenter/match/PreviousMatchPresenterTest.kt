@@ -36,7 +36,7 @@ class PreviousMatchPresenterTest {
     }
 
     @Test
-    fun getDetailLeague() {
+    fun getPreviousMatch() {
         val matches: MutableList<PreviousResults> = mutableListOf()
         val idMatch = "4335"
 

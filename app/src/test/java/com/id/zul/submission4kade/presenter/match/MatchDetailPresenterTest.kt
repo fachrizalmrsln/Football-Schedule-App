@@ -36,9 +36,9 @@ class MatchDetailPresenterTest {
     }
 
     @Test
-    fun getNextMatch() {
+    fun getMatchDetail() {
         val matches: MutableList<MatchResults> = mutableListOf()
-        val idMatch = "4335"
+        val idMatch = "576806"
 
         GlobalScope.launch {
             Mockito.`when`(

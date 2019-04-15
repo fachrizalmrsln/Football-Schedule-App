@@ -65,7 +65,7 @@ class MainActivityTest {
         delay()
     }
 
-    private fun delay(){
+    private fun delay() {
         try {
             Thread.sleep(2000)
         } catch (e: InterruptedException) {
