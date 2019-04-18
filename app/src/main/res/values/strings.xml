@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Submission4KADE</string>
+    <string name="app_name">Submission5KADE</string>
     <string name="team_name_template">Team Name</string>
     <string name="matches">Matches</string>
     <string name="teams">Teams</string>
@@ -31,6 +31,13 @@
     <string name="league">League</string>
     <string name="country">Country</string>
     <string name="no_match_found">No Match Found !</string>
+    <string name="classement">Classement</string>
+    <string name="win">Win</string>
+    <string name="draw">Draw</string>
+    <string name="lose">Lose</string>
+    <string name="played">Play</string>
+    <string name="total">Total</string>
+    <string name="no_team_found">No Team Found !</string>
 
     <array name="league">
         <item>English Premier League</item>

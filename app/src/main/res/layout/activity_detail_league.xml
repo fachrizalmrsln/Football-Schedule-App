@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.id.zul.submission4kade.activity.DetailLeagueActivity">
+    tools:context="com.id.zul.submission5kade.activity.DetailLeagueActivity">
 
     <include
         layout="@layout/toolbar"/>
@@ -153,6 +153,151 @@
                     tools:ignore="ContentDescription"/>
 
             </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/teams"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/textSize30"
+                android:layout_margin="@dimen/margin16"/>
+
+            <ProgressBar
+                android:id="@+id/progress_team_detail_league"
+                android:layout_width="@dimen/size60"
+                android:layout_height="@dimen/size60"
+                android:layout_margin="@dimen/margin16"
+                android:visibility="gone"
+                android:layout_gravity="center"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_team_detail_league"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin16"
+                android:layout_marginRight="@dimen/margin16"
+                android:layout_marginBottom="@dimen/margin16"
+                tools:listitem="@layout/recycler_team_template"
+                android:orientation="horizontal"
+                android:visibility="visible"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/classement"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/textSize30"
+                android:layout_margin="@dimen/margin16"/>
+
+            <ProgressBar
+                android:id="@+id/progress_classement_detail_league"
+                android:layout_width="@dimen/size60"
+                android:layout_height="@dimen/size60"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/size200"
+                android:layout_gravity="center"/>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_classement_detail_league"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin8"
+                app:cardCornerRadius="@dimen/margin8">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:background="@color/colorAccent"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size50"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/margin8"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/text_team_name_classement_detail_league"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="@string/team_name"
+                            android:textSize="@dimen/textSize16"
+                            android:textColor="@android:color/white"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/text_total_classement_detail_league"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/total"
+                            android:textSize="@dimen/textSize16"
+                            android:textColor="@android:color/white"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/text_win_classement_detail_league"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/win"
+                            android:textSize="@dimen/textSize16"
+                            android:textColor="@android:color/white"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/text_draw_classement_detail_league"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/draw"
+                            android:textSize="@dimen/textSize16"
+                            android:textColor="@android:color/white"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/text_lose_classement_detail_league"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/lose"
+                            android:textSize="@dimen/textSize16"
+                            android:textColor="@android:color/white"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/text_play_classement_detail_league"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/played"
+                            android:textSize="@dimen/textSize16"
+                            android:textColor="@android:color/white"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_classement_detail_league"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:listitem="@layout/recycler_classement_template"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"

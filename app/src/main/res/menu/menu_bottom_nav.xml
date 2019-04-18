@@ -13,4 +13,8 @@
         android:id="@+id/nav_league"
         android:icon="@drawable/league"
         android:title="@string/league"/>
+    <item
+        android:id="@+id/nav_classement"
+        android:icon="@drawable/classement"
+        android:title="@string/classement"/>
 </menu>

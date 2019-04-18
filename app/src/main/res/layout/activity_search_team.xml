@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.SearchTeamActivity">
+
+    <include
+        layout="@layout/toolbar"/>
+
+    <ProgressBar
+        android:layout_marginTop="@dimen/size250"
+        android:id="@+id/progress_search_team"
+        android:layout_width="@dimen/size60"
+        android:layout_height="@dimen/size60"
+        android:visibility="gone"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/text_not_found_search_team"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/textSize18"
+        android:layout_marginTop="@dimen/size250"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:text="@string/no_team_found"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_search_team"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:listitem="@layout/recycler_team_template">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

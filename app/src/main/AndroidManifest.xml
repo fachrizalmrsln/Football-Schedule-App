@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
-          package="com.id.zul.submission4kade">
+          package="com.id.zul.submission5kade">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -14,22 +14,26 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
-            android:name="com.id.zul.submission4kade.activity.DetailLeagueActivity"
-            android:parentActivityName="com.id.zul.submission4kade.activity.DetailLeagueActivity">
+            android:name=".activity.SearchTeamActivity"
+            android:parentActivityName=".activity.SearchTeamActivity">
         </activity>
         <activity
-            android:name="com.id.zul.submission4kade.activity.DetailMatchActivity"
-            android:parentActivityName="com.id.zul.submission4kade.activity.DetailMatchActivity">
+            android:name=".activity.DetailLeagueActivity"
+            android:parentActivityName=".activity.DetailLeagueActivity">
         </activity>
         <activity
-            android:name="com.id.zul.submission4kade.activity.SearchActivity"
-            android:parentActivityName="com.id.zul.submission4kade.activity.SearchActivity">
+            android:name=".activity.DetailMatchActivity"
+            android:parentActivityName=".activity.DetailMatchActivity">
         </activity>
         <activity
-            android:name="com.id.zul.submission4kade.activity.DetailTeamActivity"
-            android:parentActivityName="com.id.zul.submission4kade.activity.DetailTeamActivity">
+            android:name=".activity.SearchActivity"
+            android:parentActivityName=".activity.SearchActivity">
         </activity>
-        <activity android:name="com.id.zul.submission4kade.activity.MainActivity">
+        <activity
+            android:name=".activity.DetailTeamActivity"
+            android:parentActivityName=".activity.DetailTeamActivity">
+        </activity>
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
