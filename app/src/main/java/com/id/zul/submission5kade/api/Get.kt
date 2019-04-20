@@ -5,7 +5,7 @@ import com.id.zul.submission5kade.BuildConfig
 
 object Get {
 
-    fun getTeams(league: String?): String {
+    fun getTeams(leagueID: String?): String {
         return Uri.parse(BuildConfig.BASE_URL)
             .buildUpon()
             .appendPath("api")
@@ -13,19 +13,19 @@ object Get {
             .appendPath("json")
             .appendPath(BuildConfig.API_KEY)
             .appendPath("search_all_teams.php")
-            .appendQueryParameter("l", league)
+            .appendQueryParameter("l", leagueID)
             .build()
             .toString()
     }
 
-    fun getTeamDetail(id: String?): String {
+    fun getTeamDetail(teamID: String?): String {
         return Uri.parse(BuildConfig.BASE_URL).buildUpon()
             .appendPath("api")
             .appendPath("v1")
             .appendPath("json")
             .appendPath(BuildConfig.API_KEY)
             .appendPath("lookupteam.php")
-            .appendQueryParameter("id", id)
+            .appendQueryParameter("id", teamID)
             .build()
             .toString()
     }
@@ -54,14 +54,14 @@ object Get {
             .toString()
     }
 
-    fun getMatchDetail(id: String?): String {
+    fun getMatchDetail(matchID: String?): String {
         return Uri.parse(BuildConfig.BASE_URL).buildUpon()
             .appendPath("api")
             .appendPath("v1")
             .appendPath("json")
             .appendPath(BuildConfig.API_KEY)
             .appendPath("lookupevent.php")
-            .appendQueryParameter("id", id)
+            .appendQueryParameter("id", matchID)
             .build()
             .toString()
     }
@@ -78,26 +78,26 @@ object Get {
             .toString()
     }
 
-    fun getDetailLeague(id: String?): String {
+    fun getDetailLeague(leagueID: String?): String {
         return Uri.parse(BuildConfig.BASE_URL).buildUpon()
             .appendPath("api")
             .appendPath("v1")
             .appendPath("json")
             .appendPath(BuildConfig.API_KEY)
             .appendPath("lookupleague.php")
-            .appendQueryParameter("id", id)
+            .appendQueryParameter("id", leagueID)
             .build()
             .toString()
     }
 
-    fun getClassement(id: String?): String {
+    fun getClassement(leagueID: String?): String {
         return Uri.parse(BuildConfig.BASE_URL).buildUpon()
             .appendPath("api")
             .appendPath("v1")
             .appendPath("json")
             .appendPath(BuildConfig.API_KEY)
             .appendPath("lookuptable.php")
-            .appendQueryParameter("l", id)
+            .appendQueryParameter("l", leagueID)
             .build()
             .toString()
     }
@@ -110,6 +110,30 @@ object Get {
             .appendPath(BuildConfig.API_KEY)
             .appendPath("searchteams.php")
             .appendQueryParameter("t", query)
+            .build()
+            .toString()
+    }
+
+    fun getPlayer(teamID: String?): String {
+        return Uri.parse(BuildConfig.BASE_URL).buildUpon()
+            .appendPath("api")
+            .appendPath("v1")
+            .appendPath("json")
+            .appendPath(BuildConfig.API_KEY)
+            .appendPath("lookup_all_players.php")
+            .appendQueryParameter("id", teamID)
+            .build()
+            .toString()
+    }
+
+    fun getPlayerDetails(playerID: String?): String {
+        return Uri.parse(BuildConfig.BASE_URL).buildUpon()
+            .appendPath("api")
+            .appendPath("v1")
+            .appendPath("json")
+            .appendPath(BuildConfig.API_KEY)
+            .appendPath("lookupplayer.php")
+            .appendQueryParameter("id", playerID)
             .build()
             .toString()
     }

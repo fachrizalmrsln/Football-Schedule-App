@@ -178,7 +178,7 @@
                 android:layout_marginLeft="@dimen/margin16"
                 android:layout_marginRight="@dimen/margin16"
                 android:layout_marginBottom="@dimen/margin16"
-                tools:listitem="@layout/recycler_team_template"
+                tools:listitem="@layout/recycler_team_small_template"
                 android:orientation="horizontal"
                 android:visibility="visible"/>
 

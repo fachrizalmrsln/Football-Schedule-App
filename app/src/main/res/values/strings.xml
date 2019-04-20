@@ -38,6 +38,9 @@
     <string name="played">Play</string>
     <string name="total">Total</string>
     <string name="no_team_found">No Team Found !</string>
+    <string name="player_name">Player Name</string>
+    <string name="position">Position</string>
+    <string name="players">Players</string>
 
     <array name="league">
         <item>English Premier League</item>

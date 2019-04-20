@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size250"
+        android:layout_margin="@dimen/margin8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/padding8"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image_player_template"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/ic_launcher_background"
+                tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:id="@+id/text_player_template"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:textColor="@color/colorAccent"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/textSize20"
+                android:text="@string/player_name"/>
+
+            <TextView
+                android:id="@+id/text_player_position_template"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:textColor="@color/colorAccent"
+                android:gravity="center"
+                android:textSize="@dimen/textSize16"
+                android:text="@string/position"/>
+
+            <TextView
+                android:id="@+id/text_player_country_template"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:textColor="@color/colorAccent"
+                android:textStyle="italic"
+                android:gravity="center"
+                android:textSize="@dimen/textSize16"
+                android:text="@string/country"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

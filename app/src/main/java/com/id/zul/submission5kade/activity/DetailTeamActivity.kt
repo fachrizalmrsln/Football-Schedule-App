@@ -5,18 +5,23 @@ import android.database.sqlite.SQLiteConstraintException
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import com.google.gson.Gson
 import com.id.zul.submission5kade.R
+import com.id.zul.submission5kade.adapter.player.PlayersAdapter
 import com.id.zul.submission5kade.api.Request
 import com.id.zul.submission5kade.database.FavoriteTeam
 import com.id.zul.submission5kade.database.database
+import com.id.zul.submission5kade.model.player.PlayerResults
 import com.id.zul.submission5kade.model.team.FavoriteTeamModel
 import com.id.zul.submission5kade.model.team.TeamResults
+import com.id.zul.submission5kade.presenter.player.PlayersPresenter
 import com.id.zul.submission5kade.presenter.team.TeamDetailPresenter
+import com.id.zul.submission5kade.view.player.PlayersView
 import com.id.zul.submission5kade.view.team.TeamDetailView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail_team.*
@@ -27,15 +32,19 @@ import org.jetbrains.anko.db.select
 import org.jetbrains.anko.longToast
 import org.jetbrains.anko.toast
 
-class DetailTeamActivity : AppCompatActivity(), TeamDetailView {
+class DetailTeamActivity : AppCompatActivity(), TeamDetailView, PlayersView {
 
     private lateinit var teamDetailPresenter: TeamDetailPresenter
     private lateinit var favorite: FavoriteTeamModel
     private var isFavoriteOr: Boolean = false
     private var menuItem: Menu? = null
 
-    lateinit var teamID: String
-    lateinit var teamName: String
+    private lateinit var playersPresenter: PlayersPresenter
+    private var playerItems: MutableList<PlayerResults> = mutableListOf()
+    private lateinit var playerAdapter: PlayersAdapter
+
+    private lateinit var teamID: String
+    private lateinit var teamName: String
     var teamAka: String? = null
     var teamYear: String? = null
     var teamLeague: String? = null
@@ -52,7 +61,13 @@ class DetailTeamActivity : AppCompatActivity(), TeamDetailView {
 
         getValue()
         setToolbar(teamName)
+        setRecyclerView()
         initializePresenter(teamID)
+    }
+
+    private fun getValue() {
+        teamID = intent.getStringExtra("teamID")
+        teamName = intent.getStringExtra("teamName")
     }
 
     private fun setToolbar(teamName: String) {
@@ -63,16 +78,20 @@ class DetailTeamActivity : AppCompatActivity(), TeamDetailView {
         supportActionBar?.setDisplayShowHomeEnabled(true)
     }
 
+    private fun setRecyclerView() {
+        recycler_players_detail_league.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        playerAdapter = PlayersAdapter(this, playerItems)
+        recycler_players_detail_league.adapter = playerAdapter
+    }
+
     private fun initializePresenter(teamID: String) {
         val request = Request()
         val gson = Gson()
         teamDetailPresenter = TeamDetailPresenter(this, request, gson)
         teamDetailPresenter.getTeamDetail(teamID)
-    }
-
-    private fun getValue() {
-        teamID = intent.getStringExtra("teamID")
-        teamName = intent.getStringExtra("teamName")
+        playersPresenter = PlayersPresenter(this, request, gson)
+        playersPresenter.getPlayers(teamID)
     }
 
     override fun setLoading() {
@@ -225,5 +244,22 @@ class DetailTeamActivity : AppCompatActivity(), TeamDetailView {
 
         }
     }
+
+    override fun setLoadingPlayer() {
+        progress_players_detail_league.visibility = View.VISIBLE
+        recycler_players_detail_league.visibility = View.GONE
+    }
+
+    override fun setInItDataPlayer(dataPlayers: List<PlayerResults>) {
+        playerItems.clear()
+        playerItems.addAll(dataPlayers)
+        playerAdapter.notifyDataSetChanged()
+    }
+
+    override fun unSetLoadingPlayer() {
+        progress_players_detail_league.visibility = View.GONE
+        recycler_players_detail_league.visibility = View.VISIBLE
+    }
+
 
 }
