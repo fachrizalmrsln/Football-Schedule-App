@@ -41,6 +41,13 @@
     <string name="player_name">Player Name</string>
     <string name="position">Position</string>
     <string name="players">Players</string>
+    <string name="player_team">Player Team</string>
+    <string name="date_born">Date Born</string>
+    <string name="birth_location">Birth Location</string>
+    <string name="player_height">Player Height</string>
+    <string name="player_weight">Player Weight</string>
+    <string name="player_position">Player Position</string>
+    <string name="player_nationallity">Player Nationallity</string>
 
     <array name="league">
         <item>English Premier League</item>

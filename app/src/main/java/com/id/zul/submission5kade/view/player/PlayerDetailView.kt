@@ -4,6 +4,6 @@ import com.id.zul.submission5kade.model.player.PlayerResults
 
 interface PlayerDetailView {
     fun setLoading()
-    fun setInItData(dataPlayer: List<PlayerResults>)
+    fun setInItData(dataPlayer: PlayerResults)
     fun unSetLoading()
 }

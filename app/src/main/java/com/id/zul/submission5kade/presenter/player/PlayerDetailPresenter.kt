@@ -1,10 +1,11 @@
 package com.id.zul.submission5kade.presenter.player
 
+import android.util.Log
 import com.google.gson.Gson
 import com.id.zul.submission5kade.api.Get
 import com.id.zul.submission5kade.api.Request
 import com.id.zul.submission5kade.coroutine.ProviderContext
-import com.id.zul.submission5kade.model.player.Player
+import com.id.zul.submission5kade.model.player.Players
 import com.id.zul.submission5kade.view.player.PlayerDetailView
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -22,9 +23,10 @@ class PlayerDetailPresenter(
             val data = gson.fromJson(
                 apiRepository
                     .getRequestAsync(Get.getPlayerDetails(query)).await(),
-                Player::class.java
+                Players::class.java
             )
-            view.setInItData(data.player)
+            Log.d("Player", data.toString())
+            view.setInItData(data.players[0])
             view.unSetLoading()
         }
     }
