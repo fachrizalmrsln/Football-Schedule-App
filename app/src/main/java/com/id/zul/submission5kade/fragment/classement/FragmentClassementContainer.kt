@@ -93,7 +93,7 @@ class FragmentClassementContainer : Fragment(), ClassementView {
 
     private fun setRecycler() {
         recyclerView.layoutManager = LinearLayoutManager(activity)
-        classementAdapter = ClassementAdapter(this.context!!, items)
+        classementAdapter = ClassementAdapter(items)
         recyclerView.adapter = classementAdapter
     }
 

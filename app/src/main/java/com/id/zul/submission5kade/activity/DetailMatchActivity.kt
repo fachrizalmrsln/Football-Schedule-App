@@ -42,20 +42,20 @@ class DetailMatchActivity : AppCompatActivity(), MatchDetailView {
     private var isFavoriteOr: Boolean = false
     private var menuItem: Menu? = null
 
-    var idMatch: String? = null
-    var homeTeam: String? = null
-    var awayTeam: String? = null
-    var homeLogo: String? = null
-    var awayLogo: String? = null
-    var league: String? = null
-    var date: String? = null
-    var time: String? = null
-    var homeScore: String? = null
-    var awayScore: String? = null
-    var homeGoalSoccer: String? = null
-    var awayGoalSoccer: String? = null
-    var homeShoot: String? = null
-    var awayShoot: String? = null
+    private var idMatch: String? = null
+    private var homeTeam: String? = null
+    private var awayTeam: String? = null
+    private var homeLogo: String? = null
+    private var awayLogo: String? = null
+    private var league: String? = null
+    private var date: String? = null
+    private var time: String? = null
+    private var homeScore: String? = null
+    private var awayScore: String? = null
+    private var homeGoalSoccer: String? = null
+    private var awayGoalSoccer: String? = null
+    private var homeShoot: String? = null
+    private var awayShoot: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -90,7 +90,7 @@ class DetailMatchActivity : AppCompatActivity(), MatchDetailView {
         date = dataMatch.dateEvent.let { it?.let { it1 -> Utils.formatToDate(it1) } }
         text_date_detail_match.text = date.toString()
 
-        convertTime(dataMatch.strTime!!)
+        dataMatch.strTime?.let { convertTime(it) }
         text_time_detail_match.text = "$timeEvent WIB"
         time = timeEvent
 

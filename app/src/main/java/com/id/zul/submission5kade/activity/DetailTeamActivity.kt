@@ -45,15 +45,15 @@ class DetailTeamActivity : AppCompatActivity(), TeamDetailView, PlayersView {
 
     private lateinit var teamID: String
     private lateinit var teamName: String
-    var teamAka: String? = null
-    var teamYear: String? = null
-    var teamLeague: String? = null
-    var teamCountry: String? = null
-    var teamLogo: String? = null
-    var teamStadiumIcon: String? = null
-    var teamStadiumName: String? = null
-    var teamStadiumLocation: String? = null
-    var teamDescription: String? = null
+    private var teamAka: String? = null
+    private var teamYear: String? = null
+    private var teamLeague: String? = null
+    private var teamCountry: String? = null
+    private var teamLogo: String? = null
+    private var teamStadiumIcon: String? = null
+    private var teamStadiumName: String? = null
+    private var teamStadiumLocation: String? = null
+    private var teamDescription: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -260,6 +260,5 @@ class DetailTeamActivity : AppCompatActivity(), TeamDetailView, PlayersView {
         progress_players_detail_league.visibility = View.GONE
         recycler_players_detail_league.visibility = View.VISIBLE
     }
-
 
 }

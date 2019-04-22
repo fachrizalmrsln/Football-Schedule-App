@@ -1,6 +1,5 @@
 package com.id.zul.submission5kade.adapter.classement
 
-import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,7 @@ import android.widget.TextView
 import com.id.zul.submission5kade.R
 import com.id.zul.submission5kade.model.classement.ClassementResults
 
-class ClassementAdapter(private val context: Context, private val results: List<ClassementResults>) :
+class ClassementAdapter(private val results: List<ClassementResults>) :
     RecyclerView.Adapter<ClassementAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

@@ -74,7 +74,7 @@ class DetailLeagueActivity : AppCompatActivity(), LeagueView, TeamsView, Classem
         recycler_team_detail_league.adapter = adapter
 
         recycler_classement_detail_league.layoutManager = LinearLayoutManager(this)
-        adapterClassement = ClassementAdapter(this, itemsClassement)
+        adapterClassement = ClassementAdapter(itemsClassement)
         recycler_classement_detail_league.adapter = adapterClassement
     }
 
