@@ -1,2 +1,2 @@
 # Submission5KADE
-Submission 5.
+Submission 5
