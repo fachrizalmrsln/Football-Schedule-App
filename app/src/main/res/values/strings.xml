@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Submission5KADE</string>
+    <string name="app_name">Football Schedule</string>
     <string name="team_name_template">Team Name</string>
     <string name="matches">Matches</string>
     <string name="teams">Teams</string>
