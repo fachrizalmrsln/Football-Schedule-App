@@ -1,4 +1,4 @@
-# Submission5KADE
+# FootbalSchedule
 This project was created to accomplish my KADE class in dicoding. There is 5 stage for accomplish the class. But this project was the final.
 
 # Features
