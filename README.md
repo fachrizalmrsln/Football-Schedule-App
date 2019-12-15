@@ -3,7 +3,7 @@ Football schedule app is my final project for Dicoding certification KADE (Kotli
 
 # Screen Shoot
 
-![Alt text](/screenshoots/main.png?raw=true "Main Activity") ![Alt text](/screenshoots/team.png?raw=true "Team Activity") ![Alt text](/screenshoots/detailmatch.png?raw=true "Detail Match Activity") ![Alt text](/screenshoots/classement.png?raw=true "Classement Activity")
+![Alt text](/screenshoots/main.png?raw=true "Main Activity")![Alt text](/screenshoots/team.png?raw=true "Team Activity")![Alt text](/screenshoots/detailmatch.png?raw=true "Detail Match Activity")![Alt text](/screenshoots/classement.png?raw=true "Classement Activity")
 
 # Features
 
