@@ -1,7 +1,7 @@
 # FootbalSchedule
 Football schedule app is my final project for Dicoding certification KADE (Kotlin Android Deveoper Expert). In this app my using API from https://www.thesportsdb.com to get all the data and other operation.
 
-# Screen Shoot
+# Screenshot
 ![Alt text](/screenshots/main.png?raw=true "Main Activity")  ![Alt text](/screenshots/team.png?raw=true "Team Activity")  ![Alt text](/screenshots/detailmatch.png?raw=true "Detail Match Activity") ![Alt text](/screenshots/classement.png?raw=true "Classement Activity")
 
 # Features
