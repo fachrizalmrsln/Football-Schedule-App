@@ -6,11 +6,11 @@ Football schedule app is my final project for Dicoding certification KADE (Kotli
 
 # Features
 1. Showing data from selected league
-  - Last match
-  - Upcoming match
-  - Team
-  - Classement
-  - Player
+    - Last match
+    - Upcoming match
+    - Team
+    - Classement
+    - Player
 
 2. Saving data to local database using SQLite
    - Saving favorite match
