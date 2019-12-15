@@ -1,17 +1,37 @@
 # FootbalSchedule
-This project was created to accomplish my KADE class in dicoding. There is 5 stage for accomplish the class. But this project was the final.
+Football schedule app is my final project for Dicoding certification KADE (Kotlin Android Deveoper Expert). In this app my using API from https://www.thesportsdb.com to get all the data and other operation.
+
+# Screen Shoot
+
+![Alt text](/screenshoots/main.png?raw=true "Main Activity") ![Alt text](/screenshoots/team.png?raw=true "Team Activity") ![Alt text](/screenshoots/detailmatch.png?raw=true "Detail Match Activity") ![Alt text](/screenshoots/classement.png?raw=true "Classement Activity")
 
 # Features
-1. Retreving data from https://www.thesportsdb.com/
-2. Searching data to https://www.thesportsdb.com/
-3. Recyclerview.
-4. Search.
-5. Design Pattern (MVP)
-6. Instrument Test.
-7. Unit Test.
-8. Kotlin.
-9. Corutines.
-10. Picasso.
+
+# Features
+
+# Features
+1. Showing data from selected league
+  - Last match
+  - Upcoming match
+  - Team
+  - Classement
+  - Player
+
+2. Saving data to local database using SQLite
+   - Saving favorite match
+   - Saving favorite team
+   
+3. Testing
+   - Unit testing
+   - Instrument Testing
+
+4. Other
+   - Kotlin
+   - Design Pattern (MVP)
+   - Anko
+   - Corutines
+   - Picasso
+   - Swipe to refresh layout
 
 # Authors
 Fachrizal A. Z. Mursalin
